@@ -1,0 +1,78 @@
+Applet commands
+================
+
+APDU cases tests:
+-----------------
+opensc-tool -s 00A404000a45757477747536417080 -s 0001000000 -s 0002000d00 -s 0003000003010203  -s 000400050301020300 -s 000500ff00
+
+AES tests:
+----------
+# Set 1 vector 1
+    mode=aes-128
+    key=2b7e151628aed2a6abf7158809cf4f3c
+    iv=
+    plain=6bc1bee22e409f96e93d7e117393172a
+    cipher=3ad77bb40d7a3660a89ecaf32466ef97
+
+# Encryption
+opensc-tool -s 00A404000a45757477747536417080 -s 00110000102b7e151628aed2a6abf7158809cf4f3c -s 0015000000 -s 00120000106bc1bee22e409f96e93d7e117393172a -s 0016000000 -s 0014000000 -s 0013000000
+
+...
+Sending: 00 13 00 00 00 
+Received (SW1=0x90, SW2=0x00):
+3A D7 7B B4 0D 7A 36 60 A8 9E CA F3 24 66 EF 97 :.{..z6`....$f..
+
+# Decryption
+opensc-tool -s 00A404000a45757477747536417080 -s 00110000102b7e151628aed2a6abf7158809cf4f3c -s 0015000000 -s 001700000101 -s 00120000103ad77bb40d7a3660a89ecaf32466ef97 -s 0016000000 -s 0014000000 -s 0013000000
+
+...
+Sending: 00 13 00 00 00 
+Received (SW1=0x90, SW2=0x00):
+6B C1 BE E2 2E 40 9F 96 E9 3D 7E 11 73 93 17 2A k....@...=~.s..*
+
+
+###############################################################################################
+# Set 2 vector 1
+    mode=aes-192
+    key=8e73b0f7da0e6452c810f32b809079e562f8ead2522c6b7b
+    iv=
+    plain=6bc1bee22e409f96e93d7e117393172a
+    cipher=bd334f1d6e45f25ff712a214571fa5cc
+
+# Encryption
+opensc-tool -s 00A404000a45757477747536417080 -s 00110000188e73b0f7da0e6452c810f32b809079e562f8ead2522c6b7b -s 0015000000 -s 00120000106bc1bee22e409f96e93d7e117393172a -s 0016000000 -s 0014000000 -s 0013000000
+
+Sending: 00 13 00 00 00 
+Received (SW1=0x90, SW2=0x00):
+BD 33 4F 1D 6E 45 F2 5F F7 12 A2 14 57 1F A5 CC .3O.nE._....W...
+
+
+# Decryption
+opensc-tool -s 00A404000a45757477747536417080 -s 00110000188e73b0f7da0e6452c810f32b809079e562f8ead2522c6b7b -s 0015000000 -s 001700000101 -s 0012000010bd334f1d6e45f25ff712a214571fa5cc -s 0016000000 -s 0014000000 -s 0013000000
+
+Sending: 00 13 00 00 00 
+Received (SW1=0x90, SW2=0x00):
+68 D7 79 E8 BF 63 9E 87 34 CF CC BA C5 3F C9 33 h.y..c..4....?.3
+
+
+###############################################################################################
+# Set 3 vector 1
+    mode=aes-256
+    key=603deb1015ca71be2b73aef0857d77811f352c073b6108d72d9810a30914dff4
+    iv=
+    plain=6bc1bee22e409f96e93d7e117393172a
+    cipher=f3eed1bdb5d2a03c064b5a7e3db181f8
+
+# Encryption
+opensc-tool -s 00A404000a45757477747536417080 -s 0011000020603deb1015ca71be2b73aef0857d77811f352c073b6108d72d9810a30914dff4 -s 0015000000 -s 00120000106bc1bee22e409f96e93d7e117393172a -s 0016000000 -s 0014000000 -s 0013000000
+
+Sending: 00 13 00 00 00 
+Received (SW1=0x90, SW2=0x00):
+F3 EE D1 BD B5 D2 A0 3C 06 4B 5A 7E 3D B1 81 F8 .......<.KZ~=...
+
+# Decryption
+opensc-tool -s 00A404000a45757477747536417080 -s 0011000020603deb1015ca71be2b73aef0857d77811f352c073b6108d72d9810a30914dff4 -s 0015000000 -s 001700000101 -s 0012000010f3eed1bdb5d2a03c064b5a7e3db181f8 -s 0016000000 -s 0014000000 -s 0013000000
+
+Sending: 00 13 00 00 00 
+Received (SW1=0x90, SW2=0x00):
+6B C1 BE E2 2E 40 9F 96 E9 3D 7E 11 73 93 17 2A k....@...=~.s..*

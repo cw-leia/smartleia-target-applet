@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+file: build.xml
+  -->
+
+<project basedir="."  name="targettest-Javacard-Applets">
+
+  <property environment="env"/>
+
+  <taskdef name="javacard"
+           classname="pro.javacard.ant.JavaCard"
+           classpath="ant-javacard.jar" />
+
+  <!-- Build applets -->
+  <target name="targettest">
+    <mkdir dir="targettest"/>
+    <javacard>
+      <cap jckit="${env.JAVA_SC_SDK}" aid="45757477747539"
+           output="targettest/targettest.cap" sources="src"
+           jca="targettest/targettest.jca">
+        <applet class="targettest.targettest" aid="45757477747536417080"/>
+      </cap>
+    </javacard>
+  </target>
+
+  <target name="clean">
+    <delete dir="targettest"/>
+  </target>
+
+</project>
