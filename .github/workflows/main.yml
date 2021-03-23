@@ -20,10 +20,10 @@ jobs:
           # 2) Get JDK
           wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -;
           sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/;
-          sudo apt-get update && sudo apt-get install --reinstall adoptopenjdk-11-hotspot;
-          sudo update-java-alternatives -s adoptopenjdk-11-hotspot-amd64;
+          sudo apt-get update && sudo apt-get install --reinstall adoptopenjdk-8-hotspot;
+          sudo update-java-alternatives -s adoptopenjdk-8-hotspot-amd64;
           # 3) Get Javacard SDKs
-          cd sdks && git clone https://github.com/martinpaljak/oracle_javacard_sdks && mv oracle_javacard_sdks/jc303_kit ./ && mv oracle_javacard_sdks/jc305u1_kit/ /tmp/ && rm -rf oracle_javacard_sdks && cd -;
+          cd sdks && git clone https://github.com/martinpaljak/oracle_javacard_sdks && mv oracle_javacard_sdks/jc303_kit ./ && mv oracle_javacard_sdks/jc305u3_kit/ /tmp/ && rm -rf oracle_javacard_sdks && cd -;
           # 4) Compile our applet
           make; 
           # 5) Clone jcardsim repository, compile and install
