@@ -28,7 +28,7 @@ jobs:
           make; 
           # 5) Clone jcardsim repository, compile and install
           git clone https://github.com/licel/jcardsim;
-          cd jcardsim && export export JC_CLASSIC_HOME=/tmp/jc305u1_kit/ && mvn initialize && mvn clean install
+          cd jcardsim && export export JC_CLASSIC_HOME=/tmp/jc305u3_kit/ && mvn initialize && mvn clean install
           # 7) Clone vsmartcard, compile and install
           git clone https://github.com/frankmorgner/vsmartcard.git;
           cd vsmartcard/virtualsmartcard && autoreconf --verbose --install && ./configure --sysconfdir=/etc && make && make install; 
