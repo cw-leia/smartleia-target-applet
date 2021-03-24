@@ -43,4 +43,7 @@ jobs:
           echo "========= jcard sim log" && cat /tmp/log_jcardsim;          
           # 10) Test our applet using APDUs
           opensc-tool -l;
+          # Install applet
+          opensc-tool -s 80b80000110a45757477747536417080050000020F0F00;
+          # Execute tests
           opensc-tool -s 00A404000a45757477747536417080 -s 0001000000 -s 0002000d00 -s 0003000003010203  -s 000400050301020300 -s 000500ff00;
