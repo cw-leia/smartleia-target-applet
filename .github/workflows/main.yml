@@ -5,7 +5,7 @@ on: push
 
 jobs:
   vanilla_tests:
-    runs-on: ubuntu-bionic
+    runs-on: ubuntu-18.04
     steps:
       # Checkout repository
       - name: checkout repository
