@@ -17,7 +17,7 @@ file: build.xml
     <javacard>
       <cap jckit="${env.JAVA_SC_SDK}" aid="45757477747539"
            output="targettest/targettest.cap" sources="src"
-           jca="targettest/targettest.jca">
+           jca="targettest/targettest.jca" export="targettest/">
         <applet class="targettest.targettest" aid="45757477747536417080"/>
       </cap>
     </javacard>
