@@ -48,7 +48,7 @@ jobs:
           # Execute tests
           # Test APDU cases
           opensc-tool -s 00A404000a45757477747536417080 -s 0001000000 -s 0002000d00 -s 0003000003010203  -s 000400050301020300 -s 000500ff00 | tee /tmp/test_apdu_cases.apdu;
-          cmp --silent /tmp/test_apdu_cases.apdu tests/test_apdu_cases.apdu || echo "Test APDU cases failed!" && false;
+          cmp --silent /tmp/test_apdu_cases.apdu tests/test_apdu_cases.apdu || (echo "Test APDU cases failed!" && false);
           # Test AES128 enc
           opensc-tool -s 00A404000a45757477747536417080 -s 00110000102b7e151628aed2a6abf7158809cf4f3c -s 0015000000 -s 00120000106bc1bee22e409f96e93d7e117393172a -s 0016000000 -s 0014000000 -s 0013000000 | tee /tmp/test_aes128_enc.apdu;
           cmp --silent /tmp/test_aes128_enc.apdu tests/test_aes128_enc.apdu || (echo "Test AES128 enc failed!" && false);
