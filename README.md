@@ -1,3 +1,6 @@
+[![GitHub license](https://img.shields.io/github/license/h2lab/smartleia-target-applet)](https://github.com/h2lab/smartleia-target-applet/blob/master/LICENSE.bsd3) ![Build status](https://github.com/h2lab/smartleia-target-applet/actions/workflows/main.yml/badge.svg)
+
+
 # smartleia-target-applet
 Smartleia target applet for testing APDUs and cryptography.
 
