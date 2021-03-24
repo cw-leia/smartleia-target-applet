@@ -4,7 +4,7 @@ name: smartleia-test-applet
 on: push
 
 jobs:
-  vanilla_tests:
+  applet_tests:
     runs-on: ubuntu-18.04
     steps:
       # Checkout repository
@@ -33,7 +33,8 @@ jobs:
           git clone https://github.com/frankmorgner/vsmartcard.git;
           cd vsmartcard/virtualsmartcard && autoreconf --verbose --install && ./configure --sysconfdir=/etc && make && sudo make install;
           # 8) Launch PCSCD
-          pcscd -f &>/tmp/log_pcsc &
+          pcscd -f &>/tmp/log_pcsc &;
           # 9) launch jcardsim
-          java -cp jcardsim/target/jcardsim-3.0.5-SNAPSHOT.jar:targettest/targettest.cap com.licel.jcardsim.remote.VSmartCard applet.cfg &>/tmp/log_jcardsim &
- 
+          java -cp jcardsim/target/jcardsim-3.0.5-SNAPSHOT.jar:targettest/targettest.cap com.licel.jcardsim.remote.VSmartCard applet.cfg &>/tmp/log_jcardsim &;
+          # 10) Test our applet using APDUs
+          opensc-tool -s 00A404000a45757477747536417080 -s 0001000000 -s 0002000d00 -s 0003000003010203  -s 000400050301020300 -s 000500ff00;
