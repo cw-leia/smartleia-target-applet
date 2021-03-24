@@ -51,19 +51,19 @@ jobs:
           cmp --silent /tmp/test_apdu_cases.apdu tests/test_apdu_cases.apdu || echo "Test APDU cases failed!" && false;
           # Test AES128 enc
           opensc-tool -s 00A404000a45757477747536417080 -s 00110000102b7e151628aed2a6abf7158809cf4f3c -s 0015000000 -s 00120000106bc1bee22e409f96e93d7e117393172a -s 0016000000 -s 0014000000 -s 0013000000 | tee /tmp/test_aes128_enc.apdu;
-          cmp --silent /tmp/test_aes128_enc.apdu tests/test_aes128_enc.apdu || echo "Test AES128 enc failed!" && false;
+          cmp --silent /tmp/test_aes128_enc.apdu tests/test_aes128_enc.apdu || (echo "Test AES128 enc failed!" && false);
           # Test AES128 dec
           opensc-tool -s 00A404000a45757477747536417080 -s 00110000102b7e151628aed2a6abf7158809cf4f3c -s 0015000000 -s 001700000101 -s 00120000103ad77bb40d7a3660a89ecaf32466ef97 -s 0016000000 -s 0014000000 -s 0013000000 | tee /tmp/test_aes128_dec.apdu;
-          cmp --silent /tmp/test_aes128_dec.apdu tests/test_aes128_dec.apdu || echo "Test AES128 dec failed!" && false;
+          cmp --silent /tmp/test_aes128_dec.apdu tests/test_aes128_dec.apdu || (echo "Test AES128 dec failed!" && false);
           # Test AES192 enc
           opensc-tool -s 00A404000a45757477747536417080 -s 00110000188e73b0f7da0e6452c810f32b809079e562f8ead2522c6b7b -s 0015000000 -s 00120000106bc1bee22e409f96e93d7e117393172a -s 0016000000 -s 0014000000 -s 0013000000 | tee /tmp/test_aes192_enc.apdu;
-          cmp --silent /tmp/test_aes192_enc.apdu tests/test_aes192_enc.apdu || echo "Test AES192 enc failed!" && false;
+          cmp --silent /tmp/test_aes192_enc.apdu tests/test_aes192_enc.apdu || (echo "Test AES192 enc failed!" && false);
           # Test AES192 dec
           opensc-tool -s 00A404000a45757477747536417080 -s 00110000188e73b0f7da0e6452c810f32b809079e562f8ead2522c6b7b -s 0015000000 -s 001700000101 -s 0012000010bd334f1d6e45f25ff712a214571fa5cc -s 0016000000 -s 0014000000 -s 0013000000 | tee /tmp/test_aes192_dec.apdu;
-          cmp --silent /tmp/test_aes192_dec.apdu tests/test_aes192_dec.apdu || echo "Test AES192 dec failed!" && false;
+          cmp --silent /tmp/test_aes192_dec.apdu tests/test_aes192_dec.apdu || (echo "Test AES192 dec failed!" && false);
           # Test AES256 enc
           opensc-tool -s 00A404000a45757477747536417080 -s 0011000020603deb1015ca71be2b73aef0857d77811f352c073b6108d72d9810a30914dff4 -s 0015000000 -s 00120000106bc1bee22e409f96e93d7e117393172a -s 0016000000 -s 0014000000 -s 0013000000 | tee /tmp/test_aes256_enc.apdu;
-          cmp --silent /tmp/test_aes256_enc.apdu tests/test_aes256_enc.apdu || echo "Test AES256 enc failed!" && false;
+          cmp --silent /tmp/test_aes256_enc.apdu tests/test_aes256_enc.apdu || (echo "Test AES256 enc failed!" && false);
           # Test AES256 dec
           opensc-tool -s 00A404000a45757477747536417080 -s 0011000020603deb1015ca71be2b73aef0857d77811f352c073b6108d72d9810a30914dff4 -s 0015000000 -s 001700000101 -s 0012000010f3eed1bdb5d2a03c064b5a7e3db181f8 -s 0016000000 -s 0014000000 -s 0013000000 | tee /tmp/test_aes256_dec.apdu;
-          cmp --silent /tmp/test_aes256_dec.apdu tests/test_aes256_dec.apdu || echo "Test AES256 dec failed!" && false;
+          cmp --silent /tmp/test_aes256_dec.apdu tests/test_aes256_dec.apdu || (echo "Test AES256 dec failed!" && false);
