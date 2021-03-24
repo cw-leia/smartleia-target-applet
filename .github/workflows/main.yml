@@ -36,5 +36,7 @@ jobs:
           pcscd -f &>/tmp/log_pcsc & echo "PCSCD launched";
           # 9) launch jcardsim
           java -cp jcardsim/target/jcardsim-3.0.5-SNAPSHOT.jar:targettest/targettest.cap com.licel.jcardsim.remote.VSmartCard applet.cfg &>/tmp/log_jcardsim & echo "jcardsim launched!";
+          # Wait a bit for insertion
+          sleep 2;
           # 10) Test our applet using APDUs
           opensc-tool -s 00A404000a45757477747536417080 -s 0001000000 -s 0002000d00 -s 0003000003010203  -s 000400050301020300 -s 000500ff00;
