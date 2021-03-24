@@ -1,0 +1,18 @@
+Sending: 00 A4 04 00 0A 45 75 74 77 74 75 36 41 70 80 
+Received (SW1=0x90, SW2=0x00)
+Sending: 00 11 00 00 18 8E 73 B0 F7 DA 0E 64 52 C8 10 F3 2B 80 90 79 E5 62 F8 EA D2 52 2C 6B 7B 
+Received (SW1=0x90, SW2=0x00)
+Sending: 00 15 00 00 00 
+Received (SW1=0x90, SW2=0x00):
+8E 73 B0 F7 DA 0E 64 52 C8 10 F3 2B 80 90 79 E5 .s....dR...+..y.
+62 F8 EA D2 52 2C 6B 7B                         b...R,k{
+Sending: 00 12 00 00 10 6B C1 BE E2 2E 40 9F 96 E9 3D 7E 11 73 93 17 2A 
+Received (SW1=0x90, SW2=0x00)
+Sending: 00 16 00 00 00 
+Received (SW1=0x90, SW2=0x00):
+6B C1 BE E2 2E 40 9F 96 E9 3D 7E 11 73 93 17 2A k....@...=~.s..*
+Sending: 00 14 00 00 00 
+Received (SW1=0x90, SW2=0x00)
+Sending: 00 13 00 00 00 
+Received (SW1=0x90, SW2=0x00):
+BD 33 4F 1D 6E 45 F2 5F F7 12 A2 14 57 1F A5 CC .3O.nE._....W...
